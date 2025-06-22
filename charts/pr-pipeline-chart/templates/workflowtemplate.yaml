@@ -28,4 +28,4 @@ spec:
             arguments:
               artifacts:
                 - name: repo
-                  from: "{{steps.build.outputs.artifacts.repo}}"
+                  from: "{{`{{workflow.outputs.artifacts.repo}}`}}"

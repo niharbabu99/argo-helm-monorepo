@@ -10,8 +10,8 @@ spec:
           - name: repo
             path: /src
             git:
-              repo: https://github.com/niharbabu99/{{workflow.parameters.git_repo_name}}.git
-              revision: "{{workflow.parameters.git-revision}}"
+              repo: "https://github.com/niharbabu99/{{`{{workflow.parameters.git_repo_name}}`}}.git"
+              revision: "{{`{{workflow.parameters.git-revision}}`}}"
               disableSubmodules: true
               depth: 1
       outputs:
