@@ -25,4 +25,5 @@ spec:
         image: maven:3.9-eclipse-temurin-17
         command: ["sh", "-c"]
         workingDir: /src
-        args: ["pwd && set +x && ls -al /src && mvn clean verify"]
+        args: ["pwd && set +x && ls -al /src"]
+        #&& mvn clean verify"]

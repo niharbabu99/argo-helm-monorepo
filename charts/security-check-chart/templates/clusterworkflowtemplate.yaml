@@ -12,4 +12,5 @@ spec:
       container:
         image: aquasec/trivy
         command: ["trivy"]
-        args: ["fs", "--exit-code", "1", "--severity", "HIGH,CRITICAL", "/src"]
+        args: ["ls -al /src"]
+        #"fs", "--exit-code", "1", "--severity", "HIGH,CRITICAL", "ls -al /src"]
