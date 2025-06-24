@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
-  name: {{ .Release.Name }}-pr-pipeline
+  name: pr-pipeline-umbrella
   namespace: argo
 spec:
   entrypoint: run-pr-pipeline

@@ -16,7 +16,7 @@ spec:
             path: /src
             git:
               repo: "https://github.com/niharbabu99/{{`{{inputs.parameters.git_repo_name}}`}}.git"
-              revision: "{{`{{inputs.parameters.git-revision}}`}}"
+              revision: "{{`{{inputs.parameters.git_revision}}`}}"
               disableSubmodules: true
               depth: 1
       outputs:
