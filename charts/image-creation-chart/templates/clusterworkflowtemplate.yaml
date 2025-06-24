@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.workflowTemplate.name }}
 spec:
   templates:
-    - name: security-check
+    - name: image-build
       inputs:
         artifacts:
           - name: repo

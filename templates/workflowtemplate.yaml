@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: {{ .Release.Name }}-pr-pipeline
+  namespace: argo
+spec:
+  entrypoint: run-pr-pipeline
+  serviceAccountName: argo
+  arguments:
+    parameters:
+      - name: git_repo_name
+        value: "{{ .Values.build.workflowTemplate.parameters.git_repo_name }}"
+      - name: git_revision
+        value: "{{ .Values.build.workflowTemplate.parameters.git_revision }}"
+  templates:
+    - name: run-pr-pipeline
+      steps:
+        - - name: build
+            templateRef:
+              name: {{ .Values.build.workflowTemplate.name }}
+              template: java-build
+              clusterScope: true
+            arguments:
+              parameters:
+                - name: git_repo_name
+                  value: "{{ `{{workflow.parameters.git_repo_name}}` }}"
+                - name: git_revision
+                  value: "{{ `{{workflow.parameters.git_revision}}` }}"
+        - - name: security
+            templateRef:
+              name: {{ .Values.security-check.workflowTemplate.name }}
+              template: security-check
+              clusterScope: true
+            arguments:
+              artifacts:
+                - name: repo
+                  from: "{{ `{{workflow.outputs.artifacts.repo}}` }}"
+        - - name: image
+            templateRef:
+              name: {{ .Values.image-creation.workflowTemplate.name }}
+              template: image-build
+              clusterScope: true
+            arguments:
+              artifacts:
+                - name: repo
+                  from: "{{ `{{workflow.outputs.artifacts.repo}}` }}"
+
