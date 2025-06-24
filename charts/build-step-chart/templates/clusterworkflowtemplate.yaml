@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ClusterWorkflowTemplate
 metadata:
-  name: {{ .Values.workflowTemplate.name }}
+  name: build-step
 spec:
   templates:
     - name: java-build
       inputs:
         parameters:
           - name: git_repo_name
-            value: {{ .Values.workflowTemplate.parameters.git_repo_name }}
+            value: {{ .Values.parameters.git_repo_name }}
           - name: git_revision
-            value: {{ .Values.workflowTemplate.parameters.git_revision }}              
+            value: {{ .Values.parameters.git_revision }}              
         artifacts:
           - name: repo
             path: /src

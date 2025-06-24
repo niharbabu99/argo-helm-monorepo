@@ -1,0 +1,3 @@
+parameters:
+  git_repo_name: sample-application
+  git_revision: main

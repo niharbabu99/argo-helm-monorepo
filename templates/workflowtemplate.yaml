@@ -9,15 +9,15 @@ spec:
   arguments:
     parameters:
       - name: git_repo_name
-        value: "{{ .Values.build.workflowTemplate.parameters.git_repo_name }}"
+        value: "{{ .Values.build.parameters.git_repo_name }}"
       - name: git_revision
-        value: "{{ .Values.build.workflowTemplate.parameters.git_revision }}"
+        value: "{{ .Values.build.parameters.git_revision }}"
   templates:
     - name: run-pr-pipeline
       steps:
         - - name: build
             templateRef:
-              name: {{ .Values.build.workflowTemplate.name }}
+              name: build-step
               template: java-build
               clusterScope: true
             arguments:
@@ -28,7 +28,7 @@ spec:
                   value: "{{ `{{workflow.parameters.git_revision}}` }}"
         - - name: security
             templateRef:
-              name: {{ .Values.security-check.workflowTemplate.name }}
+              name: security-check-java
               template: security-check
               clusterScope: true
             arguments:
@@ -37,7 +37,7 @@ spec:
                   from: "{{ `{{workflow.outputs.artifacts.repo}}` }}"
         - - name: image
             templateRef:
-              name: {{ .Values.image-creation.workflowTemplate.name }}
+              name: image-creation
               template: image-build
               clusterScope: true
             arguments:
