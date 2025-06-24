@@ -5,11 +5,11 @@ description: Umbrella chart for Argo Workflows
 dependencies:
   - name: build-step-chart
     version: 0.1.0
-    repository: "file://charts/build-step-chart"
+    repository: oci://ghcr.io/niharbabu99
   - name: security-check-chart
     version: 0.1.0
-    repository: "file://charts/security-check-chart"
+    repository: oci://ghcr.io/niharbabu99
   - name: image-creation-chart
     version: 0.1.0
-    repository: "file://charts/image-creation-chart"
+    repository: oci://ghcr.io/niharbabu99
 
