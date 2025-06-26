@@ -17,7 +17,7 @@ spec:
       steps:
         - - name: build
             templateRef:
-              name: build-step
+              name: build-step-{{ .Values.build_step.chartVersion }}
               template: java-build
               clusterScope: true
             arguments:

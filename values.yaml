@@ -11,3 +11,6 @@ build:
     parameters:
       git_repo_name: sample-application
       git_revision: main
+
+build_step:
+  chartVersion: 0.3.0
