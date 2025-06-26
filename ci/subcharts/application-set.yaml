@@ -15,7 +15,7 @@ spec:
             version: 0.1.0
           - name: image-creation-chart
             chart: niharbabu99/image-creation-chart
-            version: 0.1.0
+            version: 0.2.0
   template:
     metadata:
       name: '{{name}}'
