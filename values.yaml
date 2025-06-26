@@ -1,3 +1,12 @@
+build-step-chart:
+  enabled: false
+
+security-check-chart:
+  enabled: false
+
+image-creation-chart:
+  enabled: false
+
 build:
     parameters:
       git_repo_name: sample-application
