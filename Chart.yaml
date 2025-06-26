@@ -1,6 +1,6 @@
 apiVersion: v2
 name: pr-pipeline
-version: 1.0.2
+version: 1.0.3
 description: Umbrella chart for Argo Workflows
 dependencies:
   - name: build-step-chart
