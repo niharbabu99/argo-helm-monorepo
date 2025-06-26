@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ClusterWorkflowTemplate
 metadata:
-  name: build-step
+  name: build-step-{{ .Chart.Version }}
 spec:
   templates:
     - name: java-build

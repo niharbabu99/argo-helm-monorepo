@@ -27,7 +27,7 @@ spec:
   source:
     repoURL: ghcr.io
     chart: niharbabu99/build-step-chart
-    targetRevision: 0.2.0
+    targetRevision: 0.3.0
   destination:
     server: https://kubernetes.default.svc
     namespace: argo
