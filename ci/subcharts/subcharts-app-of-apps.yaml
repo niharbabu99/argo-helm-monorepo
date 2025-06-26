@@ -27,7 +27,7 @@ spec:
   source:
     repoURL: ghcr.io
     chart: niharbabu99/build-step-chart
-    targetRevision: 1.0.0
+    targetRevision: 0.1.0
   destination:
     server: https://kubernetes.default.svc
     namespace: argo
@@ -46,7 +46,7 @@ spec:
   source:
     repoURL: ghcr.io
     chart: niharbabu99/security-check-chart
-    targetRevision: 1.0.0
+    targetRevision: 0.1.0
   destination:
     server: https://kubernetes.default.svc
     namespace: argo
@@ -65,7 +65,7 @@ spec:
   source:
     repoURL: ghcr.io
     chart: niharbabu99/image-creation-chart
-    targetRevision: 1.0.0
+    targetRevision: 0.1.0
   destination:
     server: https://kubernetes.default.svc
     namespace: argo
