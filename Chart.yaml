@@ -1,10 +1,10 @@
 apiVersion: v2
 name: pr-pipeline
-version: 1.0.5
+version: 1.0.6
 description: Umbrella chart for Argo Workflows
 dependencies:
   - name: build-step-chart
-    version: 0.3.0
+    version: 0.4.0
     repository: oci://ghcr.io/niharbabu99
     condition: build-step-chart.enabled
   - name: security-check-chart

@@ -30,5 +30,5 @@ spec:
         image: maven:3.9-eclipse-temurin-17
         command: ["sh", "-c"]
         workingDir: /src
-        args: ["pwd && set +x && ls -al /src && echo \"build completed\""]
+        args: ["pwd && set +x && ls -al /src && echo \"build completed with version 1.0.4\""]
         #&& mvn clean verify"]
